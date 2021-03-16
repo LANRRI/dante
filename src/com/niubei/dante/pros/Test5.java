@@ -1,6 +1,10 @@
 package com.niubei.dante.pros;
 
 public class Test5 {
+//    遍历所有长度的子串
+//    再遍历每一个位置
+//    dp[i][i] 代表i 位 j位是否是回文子串
+//
     public String longestPalindrome(String s) {
         int n = s.length();
         boolean[][] dp = new boolean[n][n];

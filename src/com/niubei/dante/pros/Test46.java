@@ -14,12 +14,12 @@ class Test46 {
         List<List<Integer>> orders = new ArrayList<>();
         int[] labels = new int[nums.length];
         List<Integer> curPre = new ArrayList<>();
-        int idx = 0;
-        ord(list,orders,size,curPre,idx,labels);
+
+        ord(list,orders,size,curPre,labels);
         return orders;
     }
 
-    public void ord(List<Integer> nums,List<List<Integer>> orders,int ordLen, List<Integer> curPre,int idx,int[] labels) {
+    public void ord(List<Integer> nums,List<List<Integer>> orders,int ordLen, List<Integer> curPre,int[] labels) {
         if (curPre.size() == ordLen){
             orders.add(new ArrayList<>(curPre));
             return;
@@ -29,7 +29,7 @@ class Test46 {
                 int pivot = nums.get(i);
                 curPre.add(pivot);
                 labels[i]=1;
-                ord(nums, orders, ordLen, curPre, i + 1, labels);
+                ord(nums, orders, ordLen, curPre, labels);
                 curPre.remove(curPre.size() - 1);
                 labels[i]=0;
             }

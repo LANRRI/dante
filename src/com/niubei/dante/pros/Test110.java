@@ -5,13 +5,6 @@ import java.util.List;
 
 class Test110 {
 
-    static class TreeNode {
-        int val;
-        TreeNode right;
-        TreeNode left;
-        TreeNode() {}
-        TreeNode(int val) { this.val = val; }
-    }
     public boolean isBalanced(TreeNode root) {
         return recursion(root) == -1;
     }
@@ -27,7 +20,6 @@ class Test110 {
         }else {
             return -1;
         }
-
     }
 
     public static void main(String[] args){

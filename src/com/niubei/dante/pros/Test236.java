@@ -4,19 +4,6 @@ package com.niubei.dante.pros;
 import java.util.*;
 
 class Test236 {
-
-//        1->2->3->4->5
-//        p  q->n
-
-
-//        1->4->3->2->5-
-    static class TreeNode {
-        int val;
-        TreeNode right;
-        TreeNode left;
-        TreeNode() {}
-        TreeNode(int val) { this.val = val; }
-    }
     public TreeNode lowestCommonAncestor() {
         return null;
     }
@@ -35,17 +22,24 @@ class Test236 {
         return findLeft || findRight || (root.val == p.val || root.val == q.val);
     }
     // 节点中无重复值
-    private boolean dfs(TreeNode root, TreeNode p, TreeNode q) {
-        if (root == null) return false;
-        boolean lson = dfs(root.left, p, q);
-        boolean rson = dfs(root.right, p, q);
-        // 左右均找到，       或者 val 匹配，并且左右，有一个找到
-        if ((lson && rson) || ((root.val == p.val || root.val == q.val) && (lson || rson))) {
-            TreeNode ans = root;
+    public boolean dfs(TreeNode root, TreeNode p, TreeNode q){
+        if(root == null){
+            return false;
         }
-        return lson || rson || (root.val == p.val || root.val == q.val);
+        //在当前节点
+        boolean inCurrentNode = root.val == p.val || root.val == q.val;
+        //在左节点
+        boolean inLeft = dfs(root.left,p,q);
+        //在右节点
+        boolean inRight = dfs(root.right,p,q);
+        if((inLeft && inRight) || (inCurrentNode && (inLeft || inRight))){
+//            更上一层节点值不符合,inRight/inLeft
+           TreeNode ans = root;
+        }
+        return inLeft || inRight || inCurrentNode;
     }
 
+//    最优雅
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null || p == root || q == root) {
             return root;

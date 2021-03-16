@@ -1,24 +1,11 @@
 package com.niubei.dante.pros;
 
 
-import javax.swing.tree.TreeNode;
 import java.util.*;
 
 class Test94 {
 
-//        1->2->3->4->5
-//        p  q->n
-
-
-//        1->4->3->2->5-
-    static class ListNode {
-        int val;
-        ListNode right;
-        ListNode left;
-        ListNode() {}
-        ListNode(int val) { this.val = val; }
-    }
-    public void midOrder(ListNode head) {
+    public void midOrder(TreeNode head) {
         if(head == null){
             return;
         }
@@ -27,27 +14,39 @@ class Test94 {
         midOrder(head.right);
     }
 
-//    public List<Integer> inorderTraversal(TreeNode root) { {
-//        List<Integer> res = new ArrayList<Integer>();
-//        Stack<ListNode> s = new Stack<>();
-//        s.push(root);
-//        while (!s.empty()){
-//            while (root.left!=null){
-//                s.push(root.left);
-//                root = root.left;
-//            }
-//            res.add(root.val);
-//            if (root.right == null){
-//                root = s.pop();
-//            }else {
-//                root = root.right;
-//            }
-//        }
-//        return res;
-//    }
+    public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> res = new ArrayList<Integer>();
+        Stack<TreeNode> s = new Stack<>();
+        while (root != null || !s.empty()){
+            while (root!=null){
+                s.push(root);
+                root = root.left;
+            }
+            root = s.pop();
+            res.add(root.val);
+            root = root.right;
+        }
+        return res;
+    }
 
-    public void midOrder3(ListNode root) {
-        Stack<ListNode> s = new Stack<>();
+
+    public List<Integer> preOrder(TreeNode root) {
+        List<Integer> res = new ArrayList<Integer>();
+        Stack<TreeNode> s = new Stack<>();
+        while (root != null || !s.empty()){
+            while (root!=null){
+                res.add(root.val);
+                s.push(root);
+                root = root.left;
+            }
+            root = s.pop();
+            root = root.right;
+        }
+        return res;
+    }
+
+    public void midOrder3(TreeNode root) {
+        Stack<TreeNode> s = new Stack<>();
 //        s.push(root);
         while (root !=null || !s.empty()){
             while (root!=null){
@@ -60,8 +59,8 @@ class Test94 {
         }
     }
 
-    public void pre(ListNode root) {
-        Stack<ListNode> s = new Stack<>();
+    public void pre(TreeNode root) {
+        Stack<TreeNode> s = new Stack<>();
         s.push(root);
         while (root !=null || !s.empty()){
             while (root!=null){
@@ -92,14 +91,14 @@ class Test94 {
 //        }
 //    }
 
-    public List<Integer> postorderTraversal(ListNode root) {
+    public List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<Integer>();
         if (root == null) {
             return res;
         }
 
-        Deque<ListNode> stack = new LinkedList<ListNode>();
-        ListNode prev = null;
+        Deque<TreeNode> stack = new LinkedList<TreeNode>();
+        TreeNode prev = null;
         while (root != null || !stack.isEmpty()) {
             while (root != null) {
                 stack.push(root);
