@@ -3,7 +3,7 @@ package com.niubei.dante.pros;
 
 import java.util.*;
 
-class Test94 {
+class Test94Tranverse {
 
     public void midOrder(TreeNode head) {
         if(head == null){
@@ -72,24 +72,6 @@ class Test94 {
             root = root.right;
         }
     }
-//
-//    public void post(ListNode root) {
-//        Stack<ListNode> s = new Stack<>();
-////        s.push(root);
-//        while (root !=null || !s.empty()){
-//            while (root!=null){
-//                s.push(root.left);
-//            }
-//            root = s.pop();
-//            if (root.right != null){
-//                s.push(root);
-//                root = root.right;
-//            }else{
-//                System.out.println(root.val);
-//                root = s.pop();
-//            }
-//        }
-//    }
 
     public List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<Integer>();
@@ -123,7 +105,7 @@ class Test94 {
 
 
     public static void main(String[] args){
-        Test94 t = new Test94();
+        Test94Tranverse t = new Test94Tranverse();
 //        int[] candidates = new int[]{0,1,2,2,1,0};
 //        int[][] candidates = new int[][]{{1,2},{-1,3},{3,5},{5,7},{-5,1},{4,6},{2,4},{-3,2}};
         String s="12345";

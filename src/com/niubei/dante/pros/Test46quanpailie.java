@@ -2,11 +2,10 @@ package com.niubei.dante.pros;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
-class Test46 {
+class Test46quanpailie {
 
     public List<List<Integer>> permute(int[] nums) {
         int size = nums.length;
@@ -68,7 +67,7 @@ class Test46 {
 
 
     public static void main(String[] args){
-        Test46 t = new Test46();
+        Test46quanpailie t = new Test46quanpailie();
         int[] candidates = new int[]{1,2,3};
         int target = 12;
         List<List<Integer>> res = t.permute(candidates);

@@ -4,7 +4,7 @@ package com.niubei.dante.pros;
 import java.util.*;
 
 class Test200 {
-//    深度优先搜索，将连通的1全部置为0
+//    深度优先搜索，将连通的1全部置为0，代表当前这块土地属于岛屿
     void dfs(char[][] grid, int r, int c) {
         int nr = grid.length;
         int nc = grid[0].length;

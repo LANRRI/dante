@@ -11,6 +11,7 @@ class Test39 {
 //        dfs(candidates, target, ans, combine, 0);
 //        return ans;
 //    }
+//    两个方法均有效
 
     public void dfs(int[] candidates, int target, List<List<Integer>> ans, List<Integer> combine, int idx) {
         if (idx == candidates.length) {

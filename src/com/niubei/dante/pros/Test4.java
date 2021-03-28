@@ -35,7 +35,7 @@ public class Test4 {
         int kthElement = 0;
 
         while (true) {
-            // 边界情况，当index1 等于length的时候，只需要返回另一个数组中index1+k-1位置的元素
+            // 边界情况，当index1 等于length的时候，只需要返回另一个数组中index2+k-1位置的元素
             if (index1 == length1) {
                 return nums2[index2 + k - 1];
             }
