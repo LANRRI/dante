@@ -11,6 +11,7 @@ class Test39 {
 //        dfs(candidates, target, ans, combine, 0);
 //        return ans;
 //    }
+//    两个方法均有效
 
     public void dfs(int[] candidates, int target, List<List<Integer>> ans, List<Integer> combine, int idx) {
         if (idx == candidates.length) {
@@ -41,6 +42,7 @@ class Test39 {
             res.add(new ArrayList<>(path));
             return;
         }
+//       从begin 开始的原因是防止返回的结果存在重复的可能如【2，2，3】【2，3，2】，每次选择该元素时只有选和不选
         for(int i = begin;i < candidates.length;i++) {
             int rs = candidates[i] + sum;
             if(rs <= target) {

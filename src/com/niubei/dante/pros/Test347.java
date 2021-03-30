@@ -68,7 +68,7 @@ class Test347 {
 
         if (k <= index - start) {
             qsort(values, start, index - 1, ret, retIndex, k);
-        } else {`
+        } else {
             for (int i = start; i <= index; i++) {
                 ret[retIndex++] = values.get(i)[0];
             }
