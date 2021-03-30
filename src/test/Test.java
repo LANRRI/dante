@@ -16,6 +16,6 @@ public class Test {
         return -1;
     }
 
-    yilog(h(x)) + (1-yi)log(1-h(x))
-    h(x) = 1/(1+e^x);
+//    yilog(h(x)) + (1-yi)log(1-h(x))
+//    h(x) = 1/(1+e^x);
 }
