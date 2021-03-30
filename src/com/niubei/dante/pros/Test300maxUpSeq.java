@@ -10,6 +10,7 @@ public class Test300maxUpSeq {
           dp[i] = 1;
           while (j>=0){
               if ( nums[j]<nums[i]){
+//                  以当前字符结尾的最长上升子序列
                   dp[i] = Math.max(dp[i],dp[j]+1);
               }
               j--;

@@ -1,10 +1,8 @@
 package com.niubei.dante.pros;
 
 import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
 
-public class Test322 {
+public class Test322CoinChange {
     public int res = Integer.MAX_VALUE;
 //   超时
     public int coinChange(int[] coins, int amount) {
@@ -49,7 +47,7 @@ public class Test322 {
     }
 
     public static void main(String args[]){
-        Test322 t = new Test322();
+        Test322CoinChange t = new Test322CoinChange();
         t.coinChange(new int[]{1,2147483647},2);
     }
 }

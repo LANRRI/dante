@@ -44,4 +44,35 @@ class Test82 {
         return dummyHead.next;
     }
 
+
+    public ListNode deleteDuplicates2(ListNode head) {
+        if (head == null || head.next == null) return head;
+
+        ListNode preHead = new ListNode(-1);
+        preHead.next = head;
+        ListNode x = preHead;
+        ListNode p = head.next;
+        while(p != null){
+            while(p != null && head.val == p.val){
+                p = p.next;
+            }
+//            通过判断 p 和 head.next 是否相等 来确认是否存在重复元素
+
+            if(p == head.next){
+                x = head;
+                head = head.next;
+                p = p.next;
+//            如果 重复，此时pre的指针是不移动位置的
+            }else{
+                x.next = p;
+                head = p;
+                if(p!= null){
+                    p = p.next;
+                }
+            }
+        }
+        return preHead.next;
+
+    }
+
 }
